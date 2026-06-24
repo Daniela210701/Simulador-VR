@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", () => {
   crystal.addEventListener('click', () => {
     hudPanel.setAttribute('visible', 'true');
     hudTitle.setAttribute('value', 'CRISTAL ANCESTRAL');
-    hudDesc.setAttribute('value', 'Nucléo de energia geometrica flotando sobre la isla central.');
+    hudDesc.setAttribute('value', 'Nucleo de energia geometrica flotando sobre la isla central.');
     
     crystalIndex = (crystalIndex + 1) % crystalColors.length;
     crystal.setAttribute('color', crystalColors[crystalIndex]);

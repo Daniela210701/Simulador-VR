@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
   <title>Mega Mundo Inmersivo AR Móvil</title>
   
+  <!-- Librerías de A-Frame y AR.js -->
   <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
   <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
   
@@ -12,6 +13,7 @@
 </head>
 <body style="margin: 0px; overflow: hidden;">
 
+  <!-- INTERFAZ DE BIENVENIDA CON INDICACIONES DIRECTAS -->
   <div id="welcome-screen">
     <div class="card">
       <h1>Portal Inmersivo</h1>
@@ -22,18 +24,22 @@
     </div>
   </div>
 
-  <a-scene embedded vr-mode-ui="enabled: false" arjs="sourceType: webcam; debugUIEnabled: false; displayWidth: 1280; displayHeight: 960;">
+  <!-- ESCENA AR CORREGIDA PARA COMPATIBILIDAD MÓVIL Y ESCRITORIO -->
+  <a-scene embedded vr-mode-ui="enabled: false" arjs="sourceType: webcam; debugUIEnabled: false;">
     
+    <!-- ILUMINACIÓN -->
     <a-light type="ambient" color="#e0f7fa" intensity="0.4"></a-light>
     <a-light type="directional" color="#ffb74d" intensity="0.9" position="5 10 -5"></a-light>
     <a-light type="point" color="#00f2fe" intensity="0.6" position="0 3 -4"></a-light>
 
+    <!-- INTERFAZ HUD FLOTANTE (PANEL DE DATOS) -->
     <a-entity id="hud-panel" position="0 2.2 -3.5" visible="false">
       <a-plane width="3.2" height="0.9" color="#0b0f19" material="opacity: 0.9; transparent: true"></a-plane>
       <a-text id="hud-title" value="ESTRUCTURA DETECTADA" align="center" position="0 0.22 0.01" width="4.8" color="#00f2fe"></a-text>
       <a-text id="hud-desc" value="" align="center" position="0 -0.15 0.01" width="3.5" color="#ffffff"></a-text>
     </a-entity>
 
+    <!-- ==================== EL MEGA MUNDO GEOMÉTRICO ==================== -->
     <a-entity id="torii-gate" class="interactuable" position="0 0 -6" scale="1.2 1.2 1.2">
       <a-cylinder radius="0.15" height="4" position="-2 2 0" color="#b71c1c"></a-cylinder>
       <a-cylinder radius="0.15" height="4" position="2 2 0" color="#b71c1c"></a-cylinder>
@@ -88,6 +94,7 @@
       <a-cylinder radius="5" height="1.8" theta-length="36" theta-start="72" rotation="90 0 0" color="#b71c1c" material="side: double"></a-cylinder>
     </a-entity>
 
+    <!-- CÁMARA Y RETÍCULO -->
     <a-entity camera look-controls>
       <a-cursor 
         id="fuse-cursor"
